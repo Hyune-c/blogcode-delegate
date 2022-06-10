@@ -8,4 +8,4 @@
 - STEP 2. 코드 개선
 - STEP 3. 버킷 추가
 - STEP 4. 사용 코드
-
+- STEP 5. 다중 상속을 활용한 Properties 구조화

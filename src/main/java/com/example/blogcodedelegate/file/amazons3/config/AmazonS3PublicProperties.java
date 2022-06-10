@@ -1,19 +1,12 @@
 package com.example.blogcodedelegate.file.amazons3.config;
 
-import lombok.Getter;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+public interface AmazonS3PublicProperties extends AmazonS3Properties {
 
-@Getter
-@Component
-public class AmazonS3PublicProperties implements AmazonS3Properties {
-
-	@Value("${env.profile}")
-	private String stagePath;
-
-	@Value("${cloud.aws.provendor.content}")
-	private String provendorContentUrl;
-
-	@Value("${cloud.aws.bucket.public}")
-	private String bucketName;
+	/**
+	 * s3에 연결되는 공개된 도메인이 없는 경우 호출 실패가 발생합니다.
+	 * ex) private bucket
+	 */
+	default String getProvendorContentUrl() {
+		throw new UnsupportedOperationException("잘못된 호출 입니다.");
+	}
 }
