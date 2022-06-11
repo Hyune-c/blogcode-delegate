@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Getter
 @Component
-public class AmazonS3PublicPropertiesImpl implements AmazonS3PublicProperties {
+public class AmazonS3BasePublicProperties implements AmazonS3PublicProperties {
 
 	@Value("${env.profile}")
 	private String stagePath;
